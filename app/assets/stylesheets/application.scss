@@ -1,2 +1,71 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.navbar {
+  background: lightgray;
+  padding: 15px;
+}
+
+.navbar-right > a {
+  margin: 10px;
+  font-size: 1.4em;
+}
+
+.navbar-left > a {
+  margin: 10px;
+  font-size: 1.8em;
+  color: black;
+}
+
+.container {
+  margin-top:50px;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard {
+  background-image: url('record.gif');
+  background-size: cover;
+  height: 100%;
+  width: 120%;
+  margin-left: -30px;
+}
+
+.links {
+  background: lightgrey;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  margin-left: -15px;
+}
+
+.link_png {
+  max-width:100px;
+  margin: 10px;
+}
+
+.link_png:hover{
+	    max-width: 100px; /* Same dimensions as .icon */
+	    content: ""; /* Allows psuedo element to show */
+	    background: white; /* The color you want the icon to change to */
+	    mix-blend-mode: screen; /* Only apply color on top of white, use screen if icon is black */
+      border-radius: 90%;
+    }
+
+th {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
