@@ -1,0 +1,90 @@
+<div class="container">
+    <h1>september 11, 1975: the day the music actually died</h1>
+    <p class="quote">
+      <q>But at times words can be a dangerous addition to music &#8212 they can pin it down.
+      <br>
+      Words imply that the music is about what the words say, literally, and nothing more</q>
+      <br>
+      David Byrne, How Music Works
+    </p>
+    <h2 class="titled"> intro </h2>
+    <p> as a human being, your quality and happiness of life correlates strictly to the general sentiment of whatever three songs are currently the most popular on the radio . . . jklol, but it&#39s good fun to thought-experiment around music&#39s influence over people and society. so, let&#39s do that with the help of machine learning.</p>
+    <h2 class="titled"> background </h2>
+    <p> does music affect your behavior? does music shape a society&#39s behavior? who knows. maybe? you would think science has explored this relationship, but at first glance the majority of studies are funded by <q>protect the fragile ears of our kids</q> organizations.  so, those go out the window.
+      <br>
+      <br>
+      with watson as our pickaxe, we&#39re going to mine the opinion (aka sentiment analysis) of lyrics from the top 3 Billboard songs. every year since 1940.
+      <br>
+      <br>
+      why sample the top three Billboard songs? simply because they have the most airplay, implying that the greatest amount of ears have processed those lyrics (we&#39re going strictly for quantity, nothing shall be said about quality).
+    </p>
+    <h2 class="titled">sentiment analysis (aka opinion mining)</h2>
+    <p>
+      sentiment analysis is how computers, with their extremely fast but stupid brains, quantify the emotion in a chunk of text. from speeches, twitter feeds, to chinese food menus. this emotion can be calibrated with respect to a certain topic (keyword analysis) or to the text&#39s general sentiment.
+      <br>
+      <br>
+      in machine learning talk, this is a classification problem. the goal is to map relationships between features (words) and their class (emotion). after training our model with known and understood features and classes, the computer teaches itself (psshooou mind blown) to predict future inputs.
+      <br>
+      <br>
+      sentiment analysis follows many-to-one sequence formatting (<a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank">cool blog on that</a>). many inputs (all the words) and their meanings and relationships are sequenced into a single, quantitative measure of sentiment (the final sentiment score).
+      <br>
+      <br>
+      to do this, computer's rely on a training library (typically verbs and adjectives) and their emotional polarity { hate => negative, love => positive, etc }. there's plenty of information out there on this process. (google natural language processing)
+    </p>
+    <h2 class="titled">process</h2>
+    <p>
+      - import song lyrics for the 3 most popular songs of every year according to <a href="http://billboardtop100of.com/" target="_blank">Billboard</a><br>
+        - there was trouble finding an api that would hand over desired lyrics for free, so I had to scrape the web for lyrics by hand. thanks obama.<br>
+      - analyze the general sentiment in each song using the <a href="http://www.ibm.com/watson/developercloud/alchemy-language/api/v1/#sentiment" target="_blank">Sentiment Analysis</a> provided via <a href="http://www.alchemyapi.com/" target="_blank">Alchemy API</a><br>
+      - calculate the average score for each year and perform a simple linear regression on these scores<br>
+      - create fancy graphs using <a href="https://d3js.org/" target="_blank">d3.js</a>
+    </p>
+    <h2 class="titled">assumptions</h2>
+    <p>
+      the three most popular songs of a year sufficiently represent that year in music&#39s entire spectrum of emotional polarity.
+      <br>
+      <br>
+      general sentiment analysis is not the best tool. but for our purposes here, we&#39ll assume it is sufficient. I did notice a definite correlation between a song&#39s score and their general sentiment. but, for a rigorous, quantitative analysis, using targeted sentiment analysis (with respect to certain keywords) is much more effective.
+    </p>
+    <h2 class="titled">results</h2>
+    <a href="https://bl.ocks.org/njgheorghita/1fe7f5f657b0089b62b92a966d422bb6" target="_blank" style="margin-left:10px;text-decoration:none;"><span style="font-family:Sacramento, cursive;font-size:50px;">fancy </span> interactive version</a>
+    <br>
+    <br>
+    <img src="assets/chart.png" alt="sentiment analysis chart">
+    <p>
+      overall declining trend since 1940, though there seems to be little significance to this correlation (slope is almost 0).
+      <br>
+      <br>
+      the saddest year in music (&#39 49) was followed by two of the happiest (&#39 50-&#39 51).
+      <br>
+      <br>
+      the more interesting pattern is a consistent volatility in sentiment between successive years (the up and down zig-zag pattern). maybe it&#39s a structural societal pattern the pop music industry cashes in on? sad songs one year make for relatively impactful, positive songs the next, and vice versa?
+    </p>
+    <h2 class="titled">thoughts</h2>
+    <p>
+      there you go. watson <a href="https://en.wikipedia.org/wiki/Ipse_dixit" target="_blank">dixit</a>.
+      <br>
+      <br>
+      <strong>September 11, 1975</strong> is the day the music died (aka the x-intercept of our regression model).<br>
+      since 1940, everything is depressing, music has gone to shit, the illuminati is definitely in effect.
+      <br>
+      <br>
+      on a side-note, as i scraped the web for these lyrics it was evident that every top pop song is about love. either you&#39re infatuated with your muse, or they broke your heart. so, if you ever endeavor to write a hit single, ditch those lyrics on the wonders of mitosis.
+      </p>
+    <h2 class="titled">improvements</h2>
+    <p>
+      increase the number of songs analyzed [ top 100 / year ]
+      <br>
+      dig deeper into the kind of analysis being performed [ targeted sentiment analysis ]
+      <br>
+      explore the polarity in sentiment year-to-year in closer detail
+    </p>
+    <p style="font-size:20px;">
+    <strong>thoughts? questions? ideas? i&#39d love to hear them. nickgheorghita@gmail.com</strong>
+    <br>
+    <br>
+    <a href="https://github.com/njgheorghita/day_music_died" target="_blank">code</a>
+    <br>
+    <br>
+    </p>
+  </div>
