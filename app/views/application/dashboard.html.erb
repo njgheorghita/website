@@ -1,8 +1,17 @@
 <div class="container">
   <div class="dashboard">
     <div class="splash"> 
-          <h2> sign in with spotify for a song recommendation based on your tastes </h2>
-          <%= link_to 'Sign in with Spotify', '/auth/spotify', :class => 'spotify' %>
+      <div class="splash-left">
+        <h2> sign in with spotify for a song recommendation based on your tastes </h2>
+        <%= link_to 'Sign in with Spotify', '/auth/spotify', :class => 'spotify' %>
+      </div>
+      <div class="splash-right">
+        <% if @spotify_user %>
+          <%= @spotify_user %>
+        <% else %>
+          <h1> no spotify user</h1>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="links">

@@ -29,19 +29,21 @@ class ApplicationController < ActionController::Base
     @spotify_user.remove_tracks!(tracks)
 
     albums = RSpotify::Album.search('launeddas')
-    @spotify_user.save_albums!(albums)
-    @spotify_user.saved_albums.size #=> 10
-    @spotify_user.remove_albums!(albums)
+    # @spotify_user.save_albums!(albums)
+    # @spotify_user.saved_albums.size #=> 10
+    # @spotify_user.remove_albums!(albums)
 
-    # Use Spotify Follow features
-    @spotify_user.follow(playlist)
-    @spotify_user.follows?(artists)
-    @spotify_user.unfollow(users)
+    # # Use Spotify Follow features
+    # @spotify_user.follow(playlist)
+    # @spotify_user.follows?(artists)
+    # @spotify_user.unfollow(users)
 
-    # Get user's top played artists and tracks
-    @spotify_user.top_artists #=> (Artist array)
-    @spotify_user.top_tracks(time_range: 'short_term') #=> (Track array)
+    # # Get user's top played artists and tracks
+    # @spotify_user.top_artists #=> (Artist array)
+    # @spotify_user.top_tracks(time_range: 'short_term') #=> (Track array)
 
     # Check doc for more
+
+    redirect_to root_path
   end
 end
