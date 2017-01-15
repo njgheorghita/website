@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root :to => 'application#dashboard'
   get '/projects' => 'application#projects'
-  get '/auth/spotify/callback', to: 'application#spotify'
+  get '/auth/spotify/callback', to: 'application#dashboard'
   get '/blogs', to: 'blogs#index'
   get '/blogs/blockchain', to: 'blogs#blockchain'
   get '/blogs/watson', to: 'blogs#watson'
