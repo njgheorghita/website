@@ -9,7 +9,29 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def generate_commit_count(user, repo)
+    github = Github.new
+    collaborators = github.repos.stats.commit_activity user, repo
+    commit_count = 0 
+    collaborators.each do |collaborator|
+      if collaborator.class == Fixnum
+        commit_count += collaborator
+      end
+    end
+    commit_count
+    # @bike_share_commits     = bike_share.repos.commits.list( 'cews7','bike-share').count
+    # mixmaster = Github.new
+    # @mixmaster_commits      = mixmaster.repos.commits.list('njgheorghita','mix_master').count
+    # black_thursday = Github.new
+    # @black_thursday_commits = black_thursday.repos.commits.list('wlffann', 'black_thursday').count
+    # job_tracker = Github.new
+    # @job_tracker_commits    = job_tracker.repos.commits.list('njgheorghita', 'job-tracker').count
+    # lobbify = Github.new
+    # @lobbify_commits        = lobbify.repos.commits.list('drod1000', 'lobbify').count
+  end
+
   def projects
+    @bike_share_commits = generate_commit_count('cews7','bike-share')
   end
 
   def spotify
