@@ -1,25 +1,25 @@
-<div class="container">
   <div class="dashboard">
     <div class="splash">
-        <% if @spotify_user %>
-          <%= @spotify_user.display_name %>
+        <% if @random_suggestion %>
+          <%= image_tag(@random_suggestion.artists.first.images.first["url"])%>
+          <iframe src=<%= @random_suggestion_uri %> width="500" height="100" frameborder="0" allowtransparency="true"></iframe>
           <br>
-          <% @spotify_user.playlists.each do |playlist| %>
-            <%= playlist.name %>
-            <br>
-          <% end %>
+          <%= link_to 'refresh', '/auth/spotify', :class => 'spotify' %>
         <% else %>
-          <h2> sign in with spotify for a song recommendation based on your tastes </h2>
+          <h2> 
+            looking for a hot jam? 
+            <br> 
+            sign in for fire 
+          </h2>
           <%= link_to 'Sign in with Spotify', '/auth/spotify', :class => 'spotify' %>
         <% end %>
     </div>
   </div>
-  <div class="links">
+  <footer class="links">
     <div>
       <a href="https://www.github.com/njgheorghita" target="_blank"><%= image_tag("github.png", :class => 'link_png') %></a>
       <a href="https://www.linkedin.com/in/njgheorghita" target="_blank"><%= image_tag("linkedin.png", :class => 'link_png') %></a>
       <a href="https://soundcloud.com/ghitakc" target="_blank"><%= image_tag("soundcloud.png", :class => 'link_png') %></a>
     </div>
     <h2> nickgheorghita@gmail.com </h2>
-  </div>
-</div>
+  </footer>

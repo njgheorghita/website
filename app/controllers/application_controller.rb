@@ -4,8 +4,11 @@ class ApplicationController < ActionController::Base
   def dashboard 
     if params[:code]
       @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-      # @user = RSpotify::User.find(@spotify_user.id)
-      # no fucking clue but i think something's wrong with the top_artists rspotify methd (maybe medium-term is no longer a thing?)
+      random_number = (1..@spotify_user.top_tracks.size).to_a.sample
+      @random_suggestion = @spotify_user.top_tracks[random_number]
+      if @random_suggestion 
+        @random_suggestion_uri = "https://embed.spotify.com/?uri=" + @random_suggestion.uri
+      end
     end
   end
 
