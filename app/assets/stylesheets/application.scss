@@ -128,3 +128,16 @@ footer {
   text-align: center;
 }
 
+.project_preview {
+  padding: 10px;
+  height: 350px;
+  img {
+    max-width: 250px;
+    min-height: 150px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+}
+
+
+

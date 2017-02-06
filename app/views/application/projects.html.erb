@@ -1,48 +1,103 @@
 <div class="container">
   <h1> projects </h1>
-
-  <table class="table">
-    <tr> 
-      <th> name </th>
-      <th> description </th>
-      <th> technologies </th>
-      <th> team </th>
-      <th> github </th>
-    </tr>
-    <tr>
-      <td> <a href="https://bikeshareanalytics.herokuapp.com/" target="_blank"> Bike Share </a></td>
-      <td> application to dynamically analyze SF bikeshare program data </td>
-      <td> ruby, sinatra, bikeshare data </td>
-      <td> group (3) </td>
-      <td> <a href="https://github.com/cews7/bike-share" target="_blank"> repo </a></td>
-    </tr>
-    <tr>
-      <td><a href="https://mixmaster.herokuapp.com/" target="_blank"> Mixmaster </a></td>
-      <td> website to finally understand the best electronic song/artist of all time </td>
-      <td> ruby, rails </td>
-      <td> solo </td>
-      <td> <a href="https://mixmaster.herokuapp.com/" target="_blank"> repo </a></td>
-    </tr>
-    <tr>
-      <td> <a href="https://bl.ocks.org/njgheorghita/7cc659db9fafe1feb3c525e03a680651" target="_blank"> Black Thursday </a></td>
-      <td> back-end infrastructure and visualizer of etsy customer and merchant data </td>
-      <td> ruby, d3.js, etsy store data </td>
-      <td> group (2) </td>
-      <td> <a href="https://github.com/wlffann/black_thursday" target="_blank"> repo </a></td>
-    </tr>
-    <tr>
-      <td> <a href="https://jobtracker100.herokuapp.com/" target="_blank"> Job Tracker </a></td>
-      <td> application to help facilitate the job hunt </td>
-      <td> ruby, rails </td>
-      <td> solo </td>
-      <td> <a href="https://jobtracker100.herokuapp.com/" target="_blank"> repo </a></td>
-    </tr>
-    <tr>
-      <td><a href="https://lobbify.herokuapp.com/" target="_blank"> Lobbify </a></td>
-      <td> online web store selling special events with senators </td>
-      <td> ruby, rails</td>
-      <td> group (4)</td>
-      <td> <a href="https://lobbify.herokuapp.com/" target="_blank"> repo </a></
-    </tr>
-  </table>
+  <div>
+    <div class="col-md-4 project_preview">
+      <%= image_tag ('lobbify.png'), :class => 'project_review_img' %>
+      <br>
+      <p>
+        <a href="https://lobbify.herokuapp.com/" target="_blank"> Lobbify </a>
+        online web store for special events with senators
+      </p>
+      <table class="table">
+        <tr>
+          <th> stack </th>
+          <th> team </th>
+          <th> code </th>
+        </tr>
+        <tr>
+          <td> ruby, rails </td>
+          <td> group (4) </td>
+          <td> <a href="https://github.com/drod1000/lobbify" target="_blank"> repo </a> </td>
+        </tr>
+      </table>      
+    </div>
+    <div class="col-md-4 project_preview">
+      <%= image_tag ('bikeshare.png'), :class => 'project_review_img' %>
+      <br>
+      <p>
+        <a href="https://bikeshareanalytics.herokuapp.com/" target="_blank"> Bike Share </a>
+        dynamically analyze SF bikeshare program data 
+      </p>
+      <table class="table">
+        <tr>
+          <th> stack </th>
+          <th> team </th>
+          <th> code </th>
+        </tr>
+        <tr>
+          <td> ruby, sinatra, sql, bikeshare data </td>
+          <td> group (3) </td>
+          <td> <a href="https://github.com/cews7/bike-share" target="_blank"> repo </a> </td>
+        </tr>
+      </table>      
+    </div>
+    <div class="col-md-4 project_preview">
+      <%= image_tag ('mixmaster.png'), :class => 'project_review_img' %>
+      <br>
+      <p>
+        <a href="https://mixmaster.herokuapp.com/" target="_blank"> Mixmaster </a>
+        analyze the best electronic song/artist of all time 
+      </p>
+      <table class="table">
+        <tr>
+          <th> stack </th>
+          <th> team </th>
+          <th> code </th>
+        </tr>
+        <tr>
+          <td> ruby, rails </td>
+          <td> solo </td>
+          <td><a href="https://github.com/njgheorghita/mix_master" target="_blank"> repo </a> </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-4 project_preview">
+      <%= image_tag ('jobtracker.png'), :class => 'project_review_img' %>
+      <br>
+      <p>
+        <a href="https://jobtracker100.herokuapp.com/" target="_blank"> Job Tracker </a>
+        application to help track and facilitate the job hunt 
+      </p>
+      <table class="table">
+        <tr>
+          <th> stack </th>
+          <th> team </th>
+          <th> code </th>
+        </tr>
+        <tr>
+          <td> ruby, rails </td>
+          <td> solo </td>
+          <td><a href="https://github.com/njgheorghita/job-tracker" target="_blank"> repo </a> </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-4 project_preview">
+      <%= image_tag ('blackthursday.png'), :class => 'project_review_img' %>
+      <br>
+      <p> Black Thursday: Etsy customer and merchant data suite: 
+        <a href="https://github.com/wlffann/black_thursday" target="_blank"> backend </a>, 
+        <a href="https://github.com/njgheorghita/rails_engine" target="_blank"> api </a>, 
+        <a href="https://bl.ocks.org/njgheorghita/7cc659db9fafe1feb3c525e03a680651" target="_blank"> visualizer </a> </p>
+      <table class="table">
+        <tr>
+          <th> stack </th>
+          <th> team </th>
+        </tr>
+        <tr>
+          <td> ruby, rails, d3.js </td>
+          <td> group (2) </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
