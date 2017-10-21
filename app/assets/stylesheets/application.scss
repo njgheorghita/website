@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-  background: lightgray;
+  background: #4a278e;
   padding: 15px;
 }
 
@@ -47,7 +47,8 @@ body {
 .navbar-left > a {
   margin: 10px;
   font-size: 1.8em;
-  color: black;
+  font-weight: bolder;
+  color: #FEE3AA;
 }
 
 .container {
@@ -57,32 +58,32 @@ body {
 }
 
 .dashboard {
-  background-image: url('record.gif');
-  background-size: cover;
-  height: 80%;
-  width: 100%;
-  padding-top: 10%;
+  background-image: url('yeezy.png');
+  height: 100%;
+  padding-top: 50%;
 }
 
 .links {
-  background: lightgrey;
-  padding: 20px;
+  background: #4a278e;
+  color: #FEE3AA;
   position: absolute;
+  font-weight: bolder;
   bottom: 0;
   margin-left: -15px;
 }
 
 .link_png {
-  max-width:100px;
-  margin: 10px;
+  max-width:40px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .link_png:hover{
-	    max-width: 100px; /* Same dimensions as .icon */
+	    max-width: 40px; /* Same dimensions as .icon */
 	    content: ""; /* Allows psuedo element to show */
-	    background: white; /* The color you want the icon to change to */
+	    background: #FEE3AA; /* The color you want the icon to change to */
 	    mix-blend-mode: screen; /* Only apply color on top of white, use screen if icon is black */
-      border-radius: 90%;
+      border-radius: 10%;
     }
 
 th {
@@ -98,7 +99,6 @@ th {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
   img {
     height: 100px;
     border-radius: 50%;
@@ -116,7 +116,6 @@ th {
   border-radius:10px;
   border:0;
   padding: 10px;
-  font-size:20px;
 }
 
 footer {
